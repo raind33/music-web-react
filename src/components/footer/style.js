@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import img1 from '@/assets/img/sprite_footer_02.png';
-import img2 from '@/assets/img/sprite_footer_01.png';
+import styled from 'styled-components'
+import img1 from '@/assets/img/sprite_footer_02.png'
+import img2 from '@/assets/img/sprite_footer_01.png'
 export const AppFooterWrapper = styled.div`
   height: 172px;
   background-color: #f2f2f2;

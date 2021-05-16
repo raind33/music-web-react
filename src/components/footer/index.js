@@ -1,11 +1,11 @@
-import React, { memo, Fragment } from "react";
-import { footerLinks, footerImages } from "@/common/local-data";
+import React, { memo, Fragment } from "react"
+import { footerLinks, footerImages } from "@/common/local-data"
 
 import {
   AppFooterWrapper,
   FooterLeft,
   FooterRight,
-} from './style';
+} from './style'
 
 export default memo(function MWFooter() {
   return (
@@ -21,7 +21,7 @@ export default memo(function MWFooter() {
                   </a>
                   <span className="line">|</span>
                 </Fragment>
-              );
+              )
             })}
           </div>
           <div className="copyright">
@@ -75,10 +75,10 @@ export default memo(function MWFooter() {
                 </a>
                 <span className="title">{item.title}</span>
               </li>
-            );
+            )
           })}
         </FooterRight>
       </div>
     </AppFooterWrapper>
-  );
-});
+  )
+})

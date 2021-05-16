@@ -1,9 +1,34 @@
 import React, { memo } from 'react'
+import { renderRoutes } from 'react-router-config'
 
-export default memo(function MWDiscovery() {
+import { dicoverMenu } from "@/common/local-data"
+
+import { NavLink } from 'react-router-dom'
+import {
+  DiscoverWrapper,
+  TopMenu
+} from './style'
+
+export default memo(function MDiscover(props) {
+  const { route } = props
+
   return (
-    <div>
-      discovery
-    </div>
+    <DiscoverWrapper>
+      <div className="top">
+        <TopMenu className="wrap-v1">
+          {
+            dicoverMenu.map((item, index) => {
+              return (
+                <div className="item" key={item.title}>
+                  <NavLink to={item.link}>{item.title}</NavLink>
+                </div>
+              )
+            })
+          }
+        </TopMenu>
+      </div>
+      {renderRoutes(route.routes)}
+    </DiscoverWrapper>
   )
 })
+
