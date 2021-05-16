@@ -1,16 +1,16 @@
-// import { Map } from 'immutable';
+import { Map } from 'immutable'
 
 import * as actionTypes from './constants'
 
-const defaultState = {
+const defaultState = Map({
   topBanners: [],
   hotRecommends: [],
+  test: 121,
   newAlbums: [],
-
   upRanking: {},
   newRanking: {},
   originRanking: {},
-}
+})
 
 function reducer(state = defaultState, action) {
   switch (action.type) {

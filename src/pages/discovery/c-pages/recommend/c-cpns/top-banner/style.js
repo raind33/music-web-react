@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const BannerWrapper = styled.div`
   background: url(${props => props.bgImage}) center center/6000px;
@@ -6,7 +6,8 @@ export const BannerWrapper = styled.div`
   .banner {
     height: 270px;
     background-color: red;
-
+    width: 980px;
+    margin: 0 auto;
     display: flex;
     position: relative;
   }

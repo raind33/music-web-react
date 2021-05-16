@@ -1,29 +1,29 @@
-import React, { memo, useEffect, useRef } from 'react';
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import React, { memo, useEffect, useRef } from 'react'
+import { useDispatch, useSelector, shallowEqual } from 'react-redux'
 
-import { getNewAlbumAction } from '../../store/actionCreators';
+import { getNewAlbumAction } from '../../store/actionCreators'
 
-import { Carousel } from 'antd';
-import HYAlbumCover from '@/components/album-cover';
-import HYThemeHeaderRCM from '@/components/theme-header-rcm';
-import { AlbumWrapper } from './style';
+import { Carousel } from 'antd'
+import MWAlbumCover from '@/components/album-cover'
+import MWThemeHeaderRCM from '@/components/theme-header-rcm'
+import { AlbumWrapper } from './style'
 
-export default memo(function HYNewAlbum() {
+export default memo(function MWNewAlbum() {
   // redux hooks
   const { newAlbums } = useSelector(state => ({
     newAlbums: state.getIn(["recommend", "newAlbums"])
-  }), shallowEqual);
-  const dispatch = useDispatch();
+  }), shallowEqual)
+  const dispatch = useDispatch()
 
   // other hooks
-  const pageRef = useRef();
+  const pageRef = useRef()
   useEffect(() => {
-    dispatch(getNewAlbumAction(10));
-  }, [dispatch]);
+    dispatch(getNewAlbumAction(10))
+  }, [dispatch])
 
   return (
     <AlbumWrapper>
-      <HYThemeHeaderRCM title="新碟上架" />
+      <MWThemeHeaderRCM title="新碟上架" />
       <div className="content">
         <button className="arrow arrow-left sprite_02" 
                 onClick={e => pageRef.current.prev()}></button>
@@ -35,7 +35,7 @@ export default memo(function HYNewAlbum() {
                   <div key={item} className="page">
                     {
                       newAlbums.slice(item * 5, (item + 1) * 5).map(iten => {
-                        return <HYAlbumCover key={iten.id} 
+                        return <MWAlbumCover key={iten.id} 
                                              info={iten} 
                                              size={100} 
                                              width={118} 

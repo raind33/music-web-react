@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React, { memo, Suspense } from 'react'
 import { renderRoutes } from 'react-router-config'
 import { Provider } from 'react-redux'
 import MWHeader from '@/components/header'
@@ -10,7 +10,10 @@ export default memo(function App() {
     <Provider store={store}>
       <div>
         <MWHeader/>
-        {renderRoutes(routes)}
+        <Suspense fallback={<div>page loading</div>}>
+          {renderRoutes(routes)}
+        </Suspense>
+        {/* {renderRoutes(routes)} */}
         <MWFooter/>
       </div>
     </Provider>

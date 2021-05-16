@@ -1,9 +1,9 @@
 import React, { memo } from 'react'
 
-export default memo(function HYHotAnchor() {
+export default memo(function MWHotAnchor() {
   return (
     <div>
-      <h2>HYHotAnchor</h2>
+      <h2>MWHotAnchor</h2>
     </div>
   )
 })

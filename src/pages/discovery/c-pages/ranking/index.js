@@ -1,9 +1,9 @@
 import React, { memo } from 'react'
 
-export default memo(function HYRanking() {
+export default memo(function MWRanking() {
   return (
     <div>
-      <h2>HYRanking</h2>
+      <h2>MWRanking</h2>
     </div>
   )
 })

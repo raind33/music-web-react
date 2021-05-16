@@ -1,12 +1,13 @@
-import React, { memo } from 'react'
-
-// import HYTopBanner from './c-cpns/top-banner';
-// import HYHotRecommend from './c-cpns/hot-recommend';
-// import HYNewAlbum from './c-cpns/new-album';
-// import HYRecommendRanking from './c-cpns/recommend-ranking';
-// import HYUserLogin from './c-cpns/user-login';
-// import HYSettleSinger from './c-cpns/settle-singer';
-// import HYHotAnchor from './c-cpns/hot-anchor';
+import React, { memo, useEffect } from 'react'
+import { useDispatch, useSelector, shallowEqual } from 'react-redux'
+import MWTopBanner from './c-cpns/top-banner'
+import MWHotRecommend from './c-cpns/hot-recommend'
+import MWNewAlbum from './c-cpns/new-album'
+import MWRecommendRanking from './c-cpns/recommend-ranking'
+// import MWUserLogin from './c-cpns/user-login';
+import MWSettleSinger from './c-cpns/settle-singer'
+// import MWHotAnchor from './c-cpns/hot-anchor'
+import { changeTest } from './store/actionCreators'
 import { 
   RecommendWrapper,
   Content,
@@ -14,30 +15,34 @@ import {
   RecommendRight
 } from './style'
 
-function HYRecommend(props) {
+function MWRecommend(props) {
+  const [test] = useSelector(state => {
+    return [state.getIn(['recommend', 'test'])]
+  }, shallowEqual)
   return (
     <RecommendWrapper>
-      {/* <HYTopBanner/>
+      {test}
+      <MWTopBanner/>
       <Content className="wrap-v2">
         <RecommendLeft>
-          <HYHotRecommend/>
-          <HYNewAlbum/>
-          <HYRecommendRanking/>
+          <MWHotRecommend/>
+          <MWNewAlbum/>
+          <MWRecommendRanking/>
         </RecommendLeft>
         <RecommendRight>
-          <HYUserLogin/>
-          <HYSettleSinger/>
-          <HYHotAnchor/>
+          {/* <MWUserLogin/> */}
+          {/* <MWSettleSinger/> */}
+          {/* <MWHotAnchor/> */}
         </RecommendRight>
-      </Content> */}
+      </Content>
     </RecommendWrapper>
   )
 }
 
-export default memo(HYRecommend)
+export default memo(MWRecommend)
 
 
-// function HYRecommend(props) {
+// function MWRecommend(props) {
 //   const { getBanners, topBanners } = props;
 
 //   useEffect(() => {
@@ -46,20 +51,10 @@ export default memo(HYRecommend)
 
 //   return (
 //     <div>
-//       <h2>HYRecommend: {topBanners.length}</h2>
+//       <h2>MWRecommend: {topBanners.length}</h2>
 //     </div>
 //   )
 // }
 
-// const mapStateToProps = state => ({
-//   topBanners: state.recommend.topBanners
-// });
 
-// const mapDispatchToProps = dispatch => ({
-//   getBanners: () => {
-//     dispatch(getTopBannerAction())
-//   }
-// })
-
-// export default connect(mapStateToProps, mapDispatchToProps)(memo(HYRecommend));
 

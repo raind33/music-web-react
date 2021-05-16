@@ -1,45 +1,40 @@
-import React, { memo, useEffect, useRef, useCallback, useState } from 'react';
-import { useSelector, useDispatch, shallowEqual } from 'react-redux';
+import React, { memo, useEffect, useRef, useCallback, useState } from 'react'
+import { useSelector, useDispatch, shallowEqual } from 'react-redux'
 
-import { getTopBannerAction } from '../../store/actionCreators';
+import { getTopBannerAction } from '../../store/actionCreators'
 
-import { Carousel } from 'antd';
+import { Carousel } from 'antd'
 import {
   BannerWrapper,
   BannerLeft,
   BannerRight,
   BannerControl
-} from './style';
+} from './style'
 
-export default memo(function HYTopBanner() {
-  // state
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  // 组件和redux关联: 获取数据和进行操作
+export default memo(function MWTopBanner() {
+  const [currentIndex, setCurrentIndex] = useState(0)
   const { topBanners } = useSelector(state => ({
-    // topBanners: state.get("recommend").get("topBanners")
     topBanners: state.getIn(["recommend", "topBanners"])
-  }), shallowEqual);
-  const dispatch = useDispatch();
+  }), shallowEqual)
+  const dispatch = useDispatch()
 
-  // 其他hooks
-  const bannerRef = useRef();
+  const bannerRef = useRef()
   useEffect(() => {
-    dispatch(getTopBannerAction());
-  }, [dispatch]);
+    dispatch(getTopBannerAction())
+  }, [dispatch])
 
   const bannerChange = useCallback((from, to) => {
     setTimeout(() => {
-      setCurrentIndex(to);
-    }, 0);
-  }, []);
+      setCurrentIndex(to)
+    }, 0)
+  }, [])
 
   // 其他业务逻辑
   const bgImage = topBanners[currentIndex] && (topBanners[currentIndex].imageUrl + "?imageView&blur=40x20")
 
   return (
     <BannerWrapper bgImage={bgImage}>
-      <div className="banner wrap-v2">
+      <div className="banner">
         <BannerLeft>
           <Carousel effect="fade" autoplay ref={bannerRef} beforeChange={bannerChange}>
             {

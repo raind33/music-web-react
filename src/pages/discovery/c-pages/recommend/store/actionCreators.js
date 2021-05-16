@@ -1,17 +1,17 @@
-import * as actionTypes from './constants';
+import * as actionTypes from './constants'
 
-import { getNewAlbums } from '@/services/recommend';
+import { getNewAlbums } from '@/services/recommend'
 
 import { 
   getTopBanners,
   getHotRecommends,
   getTopList
-} from '@/services/recommend';
+} from '@/services/recommend'
 
 const changeTopBannerAction = (res) => ({
   type: actionTypes.CHANGE_TOP_BANNERS,
   topBanners: res.banners
-});
+})
 
 const changeHotRecommendAction = (res) => ({
   type: actionTypes.CHANGE_HOT_RECOMMEND,
@@ -41,15 +41,15 @@ const changeOriginRankingAction = (res) => ({
 export const getTopBannerAction = () => {
   return dispatch => {
     getTopBanners().then(res => {
-      dispatch(changeTopBannerAction(res));
+      dispatch(changeTopBannerAction(res))
     })
   }
-};
+}
 
 export const getHotRecommendAction = (limit) => {
   return dispatch => {
     getHotRecommends(limit).then(res => {
-      dispatch(changeHotRecommendAction(res));
+      dispatch(changeHotRecommendAction(res))
     })
   }
 }
@@ -58,7 +58,7 @@ export const getNewAlbumAction = (limit) => {
   return dispatch => {
     getNewAlbums(limit).then(res => {
       // const albums = res.albums;
-      dispatch(changeNewAlbumAction(res));
+      dispatch(changeNewAlbumAction(res))
     })
   }
 }
@@ -68,16 +68,25 @@ export const getTopListAction = (idx) => {
     getTopList(idx).then(res => {
       switch (idx) {
         case 0:
-          dispatch(changeUpRankingAction(res));
-          break;
+          dispatch(changeUpRankingAction(res))
+          break
         case 2:
-          dispatch(changeNewRankingAction(res));
-          break;
+          dispatch(changeNewRankingAction(res))
+          break
         case 3:
-          dispatch(changeOriginRankingAction(res));
-          break;
+          dispatch(changeOriginRankingAction(res))
+          break
         default:
       }
-    });
+    })
+  }
+}
+
+export const changeTest = (val) => {
+  return dispatch => {
+    dispatch({
+      type: 'test',
+      payload: val
+    })
   }
 }

@@ -1,9 +1,9 @@
 import React, { memo } from 'react'
 
-export default memo(function HYAlbum() {
+export default memo(function MWAlbum() {
   return (
     <div>
-      <h2>HYAlbum</h2>
+      <h2>MWAlbum</h2>
     </div>
   )
 })

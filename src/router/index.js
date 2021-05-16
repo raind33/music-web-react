@@ -9,7 +9,7 @@ const MWSongs = React.lazy(_ => import("../pages/discovery/c-pages/songs"))
 const MWDjradio = React.lazy(_ => import("../pages/discovery/c-pages/djradio"))
 const MWArtist = React.lazy(_ => import("../pages/discovery/c-pages/artist"))
 const MWAlbum = React.lazy(_ => import("../pages/discovery/c-pages/album"))
-// const HYPlayer = React.lazy(_ => import("../pages/player"));
+// const MWPlayer = React.lazy(_ => import("../pages/player"));
 const routes = [
   {
     path: "/",
@@ -20,7 +20,6 @@ const routes = [
   },
   {
     path: '/discovery',
-    exact: true,
     component: MWDiscovery,
     routes: [
       {
@@ -57,7 +56,7 @@ const routes = [
       },
       // {
       //   path: "/discovery/player",
-      //   component: HYPlayer
+      //   component: MWPlayer
       // }
     ]
   },
