@@ -67,26 +67,26 @@ export const footerImages = [
 export const dicoverMenu = [
   {
     title: "推荐",
-    link: "/discover/recommend"
+    link: "/discovery/recommend"
   },
   {
     title: "排行榜",
-    link: "/discover/ranking"
+    link: "/discovery/ranking"
   },
   {
     title: "歌单",
-    link: "/discover/songs"
+    link: "/discovery/songs"
   },
   {
     title: "主播电台",
-    link: "/discover/djradio"
+    link: "/discovery/djradio"
   },
   {
     title: "歌手",
-    link: "/discover/artist"
+    link: "/discovery/artist"
   },
   {
     title: "新碟上架",
-    link: "/discover/album"
+    link: "/discovery/album"
   },
 ]

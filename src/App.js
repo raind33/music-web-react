@@ -4,6 +4,8 @@ import { Provider } from 'react-redux'
 import MWHeader from '@/components/header'
 import store from './store'
 import MWFooter from '@/components/footer'
+import HYAppPlayerBar from './pages/player/app-player-bar'
+
 import routes from './router'
 export default memo(function App() {
   return (
@@ -13,7 +15,7 @@ export default memo(function App() {
         <Suspense fallback={<div>page loading</div>}>
           {renderRoutes(routes)}
         </Suspense>
-        {/* {renderRoutes(routes)} */}
+        <HYAppPlayerBar/>
         <MWFooter/>
       </div>
     </Provider>

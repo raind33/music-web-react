@@ -74,3 +74,25 @@ img {
 .sprite_table {
   background: url(../img/sprite_table.png) no-repeat 0 9999px;
 }
+.image_cover {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-indent: -9999px;
+  background: url(../img/sprite_cover.png) no-repeat -145px -57px;
+}
+
+.sprite_player {
+  background: url(../img/playbar_sprite.png) no-repeat 0 9999px;
+}
+
+.lyric-class .ant-message-notice-content {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 50px;
+  background-color: rgba(0, 0, 0, .5);
+  color: #fff;
+}
