@@ -16,7 +16,7 @@ export default memo(function HYTopRanking(props) {
 
   // other handle
   const playMusic = (item) => {
-    // dispatch(getSongDetailAction(item.id))
+    dispatch(getSongDetailAction(item.id))
   }
 
   return (
